@@ -24,7 +24,7 @@ charges → Medical insurance cost (target, log-transformed for modeling)
 
 Predict medical insurance charges using regression models.
 
-Compare Linear Regression, Ridge, and Lasso after applying log transformation.
+Compare Linear Regression, Ridge, Lasso, and Polynomial Regression after applying log transformation.
 
 Evaluate models using R², MAE, MSE, and RMSE.
 
@@ -54,21 +54,39 @@ MAE: 0.27
 
 RMSE: 0.42
 
-📌 Key Insight: Log transformation improved stability and reduced the impact of extreme high-cost outliers. All three models perform very similarly, with Lasso offering slight feature selection benefits.
+Polynomial Regression
+
+R²: 0.861 → Higher than Linear, Ridge, and Lasso
+
+Captures non-linear relationships between features and the target
+
+More flexible but less interpretable, with potential risk of overfitting if polynomial degree is too high
+
+📌 Key Insights
+
+Log transformation improved stability and reduced the impact of extreme high-cost outliers.
+
+Linear, Ridge, and Lasso perform very similarly, with Lasso offering slight feature selection benefits.
+
+Polynomial Regression outperforms all linear-based models, showing that non-linear patterns exist in the data.
+
+However, interpretability decreases and careful degree selection is important to avoid overfitting.
 
 MAE ≈ 0.27 (log scale) → When exponentiated, this corresponds to exp(0.27) ≈ 1.30.
 
-This means that on average, the model’s predictions are about 30% higher or lower than the actual insurance charges.
+**This means that on average, the Polynomial regression model’s predictions are about 22 % higher or lower than the actual insurance charges.**
 
 📈 Visualizations
 
-Predicted vs Actual (log-charges) scatter plot shows better alignment with the perfect fit line compared to the untransformed version.
+Predicted vs Actual (log-charges)
 
-Distribution of residuals is more normal after transformation.
+Shows closer alignment with the perfect-fit line in Polynomial Regression compared to Linear Regression.
 
 🚀 Next Steps
 
-Explore non-linear models (Random Forest, XGBoost) for further improvement.
+Explore advanced non-linear models (Random Forest, XGBoost) for further improvement.
+
+Compare them with Polynomial Regression to check trade-offs between accuracy and interpretability.
 
 👩‍💻 Author
 
